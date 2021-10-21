@@ -28,5 +28,11 @@ namespace NET_and_MySQL
             Form2 Form2 = new Form2();
             Form2.ShowDialog();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form3 Form3 = new Form3();
+            Form3.ShowDialog();
+        }
     }
 }
