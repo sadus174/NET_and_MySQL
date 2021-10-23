@@ -100,15 +100,16 @@ namespace NET_and_MySQL
             //Вызов метода обновления списка преподавателей с передачей в качестве параметра ListBox
             GetListPrepods(listBox1);
             //Формируем колонки в элементе listView
-            
-
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            //Помещаем в переменную введёный ИД для удаления
             string id_del = textBox1.Text;
+            //Если функция удалила строку, то
             if (DeletePrepods(id_del))
             {
+                //Вызываем метод обновления листбокса
                 GetListPrepods(listBox1);
             }
             //Иначе произошла какая то ошибка и покажем пользователю уведомление
