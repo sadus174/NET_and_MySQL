@@ -52,5 +52,11 @@ namespace NET_and_MySQL
             Form6 Form6 = new Form6();
             Form6.ShowDialog();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Form7 Form7 = new Form7();
+            Form7.ShowDialog();
+        }
     }
 }
