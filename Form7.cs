@@ -14,34 +14,27 @@ namespace NET_and_MySQL
 {
     public partial class Form7 : Form
     {
+        //Класс для подключения к БД
         static class DBUtils
         {
+            //Статичный метод, формирующий строку для подключения и возвращающий MySqlConnection
             public static MySqlConnection GetDBConnection()
-            {
-                // строка подключения к БД
-                string connStr = "server=caseum.ru;port=33333;user=test_user;database=db_test;password=test_pass;";
-                // создаём объект для подключения к БД
-                MySqlConnection conn1 = new MySqlConnection(connStr);
-                conn1.Open();
-                conn1.Close();
-
-
-
-
-                //string host = "caseum.ru";
-                //string port = "33333";
-                //string database = "db_test";
-                //string username = "test_user";
-                //string password = "test_pass";
-                //string connString = $"server={host};port={port};user={username};database={database};password={password};";
-                //MySqlConnection conn = new MySqlConnection(connString);
-                return conn1;
-
+            {                
+                string host = "caseum.ru";
+                string port = "33333";
+                string database = "db_test";
+                string username = "test_user";
+                string password = "test_pass";
+                string connString = $"server={host};port={port};user={username};database={database};password={password};";
+                MySqlConnection conn = new MySqlConnection(connString);
+                return conn;
             }
         }
 
+        //Класс для манипулирования данными
         static class GetData
         {
+            //Метод для запроса студентов
             static public void SelectStudents(ListBox lv, MySqlConnection conn)
             {
                 //Чистим ListBox
@@ -62,8 +55,8 @@ namespace NET_and_MySQL
                     string id_prepods = reader[0].ToString();
                     string name_prepods = reader[1].ToString();
                     string dolg_prepods = reader[2].ToString();
+                    //Выводим в ListBox
                     lv.Items.Add($"{id_prepods}) {name_prepods} - {dolg_prepods}");
-
                 }
                 // закрываем reader
                 reader.Close();
@@ -79,10 +72,9 @@ namespace NET_and_MySQL
 
         private void Form7_Load(object sender, EventArgs e)
         {
+            //Объявляем объект MySqlConnection и присваеваем к нему возвращённое соединение из метода класса DBUtils.GetDBConnection()
             MySqlConnection cnt = DBUtils.GetDBConnection();
-            cnt.Open();
-            //GetData.SelectStudents(listBox1, conn);
-
+            GetData.SelectStudents(listBox1, cnt);
         }
     }
 }
