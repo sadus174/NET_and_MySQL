@@ -19,14 +19,18 @@ namespace NET_and_MySQL
         {
             //Статичный метод, формирующий строку для подключения и возвращающий MySqlConnection
             public static MySqlConnection GetDBConnection()
-            {                
+            {   
+                //Определяем параметры подключения
                 string host = "caseum.ru";
                 string port = "33333";
                 string database = "db_test";
                 string username = "test_user";
                 string password = "test_pass";
+                //Формируем строку подключения
                 string connString = $"server={host};port={port};user={username};database={database};password={password};";
+                //Создаём соединение с нашей строкой подключения
                 MySqlConnection conn = new MySqlConnection(connString);
+                //Возвращаем данное соединение из метода
                 return conn;
             }
         }
@@ -74,6 +78,7 @@ namespace NET_and_MySQL
         {
             //Объявляем объект MySqlConnection и присваеваем к нему возвращённое соединение из метода класса DBUtils.GetDBConnection()
             MySqlConnection cnt = DBUtils.GetDBConnection();
+            //Вызываем метод выборки данных и заполнения ListBox
             GetData.SelectStudents(listBox1, cnt);
         }
     }
