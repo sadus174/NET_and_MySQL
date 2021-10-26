@@ -70,5 +70,11 @@ namespace NET_and_MySQL
             Form9 Form9 = new Form9();
             Form9.ShowDialog();
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Form10 Form10 = new Form10();
+            Form10.ShowDialog();
+        }
     }
 }
