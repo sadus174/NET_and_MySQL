@@ -61,11 +61,20 @@ namespace NET_and_MySQL
         //Выделение всей строки по ЛКМ
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            //Магические строки
             dataGridView1.CurrentCell = dataGridView1[e.ColumnIndex, e.RowIndex];
             dataGridView1.CurrentRow.Selected = true;
-
             //Метод получения ID выделенной строки в глобальную переменную
             GetSelectedIDString();
+        }
+
+        //Метод обновления DataGreed
+        public void reload_list()
+        {
+            //Чистим виртуальную таблицу
+            table.Clear();
+            //Вызываем метод получения записей, который вновь заполнит таблицу
+            GetListUsers();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -132,6 +141,7 @@ namespace NET_and_MySQL
             ChangeColorDGV();
         }
 
+        //Метод изменения цвета строк, в зависимости от значения поля записи в таблице
         private void ChangeColorDGV()
         {
             //Отражаем количество записей в ДатаГриде
@@ -155,6 +165,73 @@ namespace NET_and_MySQL
                     dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Green;
                 }
             }
+        }
+
+        //Кнопка обновления 
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            //Метод обновления dataGridView, так как он полностью обновляется, покраски строк не будет. 
+            reload_list();
+        }
+
+        //удаление записи из БД
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            //Тестим вывод ID выбранной строки в MessageBox
+            MessageBox.Show("Содержимое поля Код, в выбранной строке" + id_selected_rows);
+            //Формируем запрос на удаление из БД на основании полученного ID записи в БД
+            MessageBox.Show("DELETE FROM table WHERE id_stroki=" + id_selected_rows);
+            //В данной кнопке, вы можете вызвать метод удаления строки и в качестве
+            //параметра передать ему переменную id_selected_rows в которой хранится
+            //id записи в БД для удаления. Аналогично, вы можете изменить любую строку
+            //так же, передав в качестве параметра данную переменную
+        }
+
+        //Отчислить студента
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            //Получаем ID изменяемого студента
+            string redact_id = id_selected_rows;
+            //Получаем значение нового ФИО из TextBox
+            string new_state = "1";
+            // устанавливаем соединение с БД
+            conn.Open();
+            // запрос обновления данных
+            string query2 = $"UPDATE t_stud SET id_state='{new_state}' WHERE (id='{redact_id}')";
+            // объект для выполнения SQL-запроса
+            MySqlCommand command = new MySqlCommand(query2, conn);
+            // выполняем запрос
+            command.ExecuteNonQuery();
+            // закрываем подключение к БД
+            conn.Close();
+            //Обновляем DataGrid
+            reload_list();
+            //Красим опять грид
+            ChangeColorDGV();
+
+        }
+
+        //Зачислить студента 
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            //Получаем ID изменяемого студента
+            string redact_id = id_selected_rows;
+            //Получаем значение нового ФИО из TextBox
+            string new_state = "2";
+            // устанавливаем соединение с БД
+            conn.Open();
+            // запрос обновления данных
+            string query2 = $"UPDATE t_stud SET id_state='{new_state}' WHERE (id='{redact_id}')";
+            // объект для выполнения SQL-запроса
+            MySqlCommand command = new MySqlCommand(query2, conn);
+            // выполняем запрос
+            command.ExecuteNonQuery();
+            // закрываем подключение к БД
+            conn.Close();
+            //Обновляем DataGrid
+            reload_list();
+            //Красим опять грид
+            ChangeColorDGV();
         }
     }
 }
