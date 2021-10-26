@@ -61,22 +61,16 @@ namespace NET_and_MySQL
         //Метод обновления DataGreed
         public void reload_list()
         {
-            //Чистим виртуальную таблицу
+            //Чистим виртуальную таблицу внутри класса
             ControlData.reload_list();
             //Вызываем метод получения записей, который вновь заполнит таблицу
             ControlData.GetListUsers();
-        }
-
-        //Метод удаления пользователей
-        public void DeleteUser()
-        {
-            
         }
                        
         //Собтия открытия (загрузки формы)
         private void Form10_Load(object sender, EventArgs e)
         {            
-            //Указываем, что источником данных ДатаГрида является bindingsource 
+            //Указываем, что источником данных ДатаГрида является bindingsource, возвращённый из метода класса 
             dataGridView1.DataSource = ControlData.GetListUsers();         
             //Видимость полей в гриде
             dataGridView1.Columns[0].Visible = true;
