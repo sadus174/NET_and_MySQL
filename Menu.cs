@@ -78,5 +78,11 @@ namespace NET_and_MySQL
             toolStripStatusLabel2.Text = ControlData.ID_STUD;
 
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            Form11 Form11= new Form11();
+            Form11.ShowDialog();
+        }
     }
 }
