@@ -15,8 +15,6 @@ namespace NET_and_MySQL
 {
     class ControlData
     {
-        //Поля для хранения запомненного значения
-        public static string IdSelected = "0";
         //Определяем параметры подключения
         private const string host = "caseum.ru";
         private const string port = "33333";
@@ -35,7 +33,7 @@ namespace NET_and_MySQL
         private static DataSet ds = new DataSet();
         //Представляет одну таблицу данных в памяти.
         private static DataTable table = new DataTable();
-        
+
 
         //Статичный метод, формирующий строку для подключения и возвращающий MySqlConnection
         public static MySqlConnection GetDBConnection()
