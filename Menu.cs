@@ -62,19 +62,25 @@ namespace NET_and_MySQL
         private void button8_Click(object sender, EventArgs e)
         {
             Form8 Form8 = new Form8();
-            Form8.ShowDialog();
+            Form8.ShowDialog();            
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
             Form9 Form9 = new Form9();
-            Form9.ShowDialog();
+            Form9.ShowDialog();        
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
             Form10 Form10 = new Form10();
             Form10.ShowDialog();
+            toolStripStatusLabel2.Text = ControlData.IdSelected;
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = ControlData.IdSelected;
         }
     }
 }
