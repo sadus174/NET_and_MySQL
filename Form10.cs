@@ -62,7 +62,7 @@ namespace NET_and_MySQL
         public void reload_list()
         {
             //Чистим виртуальную таблицу внутри класса
-            ControlData.reload_list();
+            ControlData.ReloadList();
             //Вызываем метод получения записей, который вновь заполнит таблицу
             ControlData.GetListUsers();
         }

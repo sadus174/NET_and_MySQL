@@ -22,11 +22,11 @@ namespace NET_and_MySQL
         private const string username = "test_user";
         private const string password = "test_pass";
         //Объявляем и инициализируем соединение
-        private static MySqlConnection conn = GetDBConnection();
+        private static readonly MySqlConnection conn = GetDBConnection();
         //DataAdapter представляет собой объект Command , получающий данные из источника данных.
-        private static MySqlDataAdapter MyDA = new MySqlDataAdapter();
+        private static readonly MySqlDataAdapter MyDA = new MySqlDataAdapter();
         //Объявление BindingSource, основная его задача, это обеспечить унифицированный доступ к источнику данных.
-        private static BindingSource bSource = new BindingSource();
+        private static readonly BindingSource bSource = new BindingSource();
         //DataSet - расположенное в оперативной памяти представление данных, обеспечивающее согласованную реляционную программную 
         //модель независимо от источника данных.DataSet представляет полный набор данных, включая таблицы, содержащие, упорядочивающие 
         //и ограничивающие данные, а также связи между таблицами.
@@ -93,7 +93,7 @@ namespace NET_and_MySQL
             return bSource;
         }
 
-        public static void reload_list()
+        public static void ReloadList()
         {
             //Чистим виртуальную таблицу
             table.Clear();
