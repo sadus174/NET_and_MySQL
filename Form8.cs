@@ -26,7 +26,8 @@ namespace NET_and_MySQL
         private DataSet ds = new DataSet();
         //Представляет одну таблицу данных в памяти.
         private DataTable table = new DataTable();
-        //Переменная для ID записи в БД, выбранной в гриде
+        //Переменная для ID записи в БД, выбранной в гриде. Пока она не содердит значения, лучше его инициализировать с 0
+        //что бы в БД не отправлялся null
         string id_selected_rows="0";
 
         public Form8()
@@ -58,6 +59,7 @@ namespace NET_and_MySQL
             //Указываем ID выделенной строки в метке
             toolStripLabel4.Text = id_selected_rows;
         }
+  
         //Выделение всей строки по ЛКМ
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -123,6 +125,7 @@ namespace NET_and_MySQL
             //Красим опять грид
             ChangeColorDGV();
         }
+        
         //Метод наполнения виртуальной таблицы и присвоение её к датагриду
         public void GetListUsers()
         {
