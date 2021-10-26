@@ -13,7 +13,7 @@ using MySql.Data.MySqlClient;
 namespace NET_and_MySQL
 {
     public partial class Form8 : Form
-    {
+    {      
         //Переменная соединения
         MySqlConnection conn;
         //DataAdapter представляет собой объект Command , получающий данные из источника данных.
@@ -27,7 +27,7 @@ namespace NET_and_MySQL
         //Представляет одну таблицу данных в памяти.
         private DataTable table = new DataTable();
         //Переменная для ID записи в БД, выбранной в гриде
-        string id_selected_rows;
+        string id_selected_rows="0";
 
         public Form8()
         {
@@ -77,10 +77,53 @@ namespace NET_and_MySQL
             GetListUsers();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //Метод удаления пользователей
+        public void DeleteUser()
         {
-
+            //Формируем строку запроса на добавление строк
+            string sql_delete_user = "DELETE FROM t_stud WHERE id='" + id_selected_rows + "'";
+            //Посылаем запрос на обновление данных
+            MySqlCommand delete_user = new MySqlCommand(sql_delete_user, conn);
+            try
+            {
+                conn.Open();
+                delete_user.ExecuteNonQuery();
+                MessageBox.Show("Удаление прошло успешно", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка удаления строки \n" + ex, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
+            finally
+            {
+                conn.Close();
+                //Вызов метода обновления ДатаГрида
+                reload_list();
+            }
         }
+
+        //Метод изменения состояния студента
+        public void ChangeStateStudent(string new_state)
+        {
+            //Получаем ID изменяемого студента
+            string redact_id = id_selected_rows;            
+            // устанавливаем соединение с БД
+            conn.Open();
+            // запрос обновления данных
+            string query2 = $"UPDATE t_stud SET id_state='{new_state}' WHERE (id='{redact_id}')";
+            // объект для выполнения SQL-запроса
+            MySqlCommand command = new MySqlCommand(query2, conn);
+            // выполняем запрос
+            command.ExecuteNonQuery();
+            // закрываем подключение к БД
+            conn.Close();
+            //Обновляем DataGrid
+            reload_list();
+            //Красим опять грид
+            ChangeColorDGV();
+        }
+        //Метод наполнения виртуальной таблицы и присвоение её к датагриду
         public void GetListUsers()
         {
             //Запрос для вывода строк в БД
@@ -101,6 +144,8 @@ namespace NET_and_MySQL
             int count_rows = dataGridView1.RowCount - 1;
             toolStripLabel2.Text = (count_rows).ToString();
         }
+
+        //Собтия открытия (загрузки формы)
         private void Form8_Load(object sender, EventArgs e)
         {
             // строка подключения к БД
@@ -172,6 +217,8 @@ namespace NET_and_MySQL
         {
             //Метод обновления dataGridView, так как он полностью обновляется, покраски строк не будет. 
             reload_list();
+            //Красим опять грид
+            ChangeColorDGV();
         }
 
         //удаление записи из БД
@@ -190,48 +237,32 @@ namespace NET_and_MySQL
         //Отчислить студента
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
-            //Получаем ID изменяемого студента
-            string redact_id = id_selected_rows;
-            //Получаем значение нового ФИО из TextBox
-            string new_state = "1";
-            // устанавливаем соединение с БД
-            conn.Open();
-            // запрос обновления данных
-            string query2 = $"UPDATE t_stud SET id_state='{new_state}' WHERE (id='{redact_id}')";
-            // объект для выполнения SQL-запроса
-            MySqlCommand command = new MySqlCommand(query2, conn);
-            // выполняем запрос
-            command.ExecuteNonQuery();
-            // закрываем подключение к БД
-            conn.Close();
-            //Обновляем DataGrid
-            reload_list();
-            //Красим опять грид
-            ChangeColorDGV();
+            ChangeStateStudent("1");
 
         }
 
         //Зачислить студента 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            //Получаем ID изменяемого студента
-            string redact_id = id_selected_rows;
-            //Получаем значение нового ФИО из TextBox
-            string new_state = "2";
-            // устанавливаем соединение с БД
-            conn.Open();
-            // запрос обновления данных
-            string query2 = $"UPDATE t_stud SET id_state='{new_state}' WHERE (id='{redact_id}')";
-            // объект для выполнения SQL-запроса
-            MySqlCommand command = new MySqlCommand(query2, conn);
-            // выполняем запрос
-            command.ExecuteNonQuery();
-            // закрываем подключение к БД
-            conn.Close();
-            //Обновляем DataGrid
-            reload_list();
-            //Красим опять грид
-            ChangeColorDGV();
+            ChangeStateStudent("2");
+        }
+
+        //Удаление записей из контекстного меню
+        private void удалитьЗаписьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DeleteUser();
+        }
+
+        //Контекстное меню
+        private void отчислитьСтудентаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangeStateStudent("1");
+        }
+
+        //Контекстное меню
+        private void зачислитьСтудентаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangeStateStudent("2");
         }
     }
 }
