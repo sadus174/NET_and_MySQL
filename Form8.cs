@@ -33,6 +33,40 @@ namespace NET_and_MySQL
         {
             InitializeComponent();
         }
+        //Выделение всей строки по ПКМ
+        private void dataGridView1_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (!e.RowIndex.Equals(-1) && !e.ColumnIndex.Equals(-1) && e.Button.Equals(MouseButtons.Right))
+            {
+                dataGridView1.CurrentCell = dataGridView1[e.ColumnIndex, e.RowIndex];
+                //dataGridView1.CurrentRow.Selected = true;
+                dataGridView1.CurrentCell.Selected = true;
+                //Метод получения ID выделенной строки в глобальную переменную
+                GetSelectedIDString();
+            }
+        }
+
+        //Метод получения ID выделенной строки, для последующего вызова его в нужных методах
+        public void GetSelectedIDString()
+        {
+            //Переменная для индекс выбранной строки в гриде
+            string index_selected_rows;
+            //Индекс выбранной строки
+            index_selected_rows = dataGridView1.SelectedCells[0].RowIndex.ToString();
+            //ID конкретной записи в Базе данных, на основании индекса строки
+            id_selected_rows = dataGridView1.Rows[Convert.ToInt32(index_selected_rows)].Cells[0].Value.ToString();
+            //Указываем ID выделенной строки в метке
+            toolStripLabel4.Text = id_selected_rows;
+        }
+        //Выделение всей строки по ЛКМ
+        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            dataGridView1.CurrentCell = dataGridView1[e.ColumnIndex, e.RowIndex];
+            dataGridView1.CurrentRow.Selected = true;
+
+            //Метод получения ID выделенной строки в глобальную переменную
+            GetSelectedIDString();
+        }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
