@@ -92,7 +92,7 @@ namespace NET_and_MySQL
                 s += "Код студента: " + reader_list[0].ToString()+ "\n";
                 s += "ФИО: " + reader_list[1].ToString()+ "\n";
                 s += "Тема курсовой: " + reader_list[4].ToString() + "\n";
-                s += "Возраст: " + reader_list[3].ToString() + " лет";
+                s += "Возраст: " + reader_list[3].ToString();
                 MessageBox.Show(s);
             }
             //Закрываем ридер

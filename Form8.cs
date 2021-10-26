@@ -163,6 +163,7 @@ namespace NET_and_MySQL
             dataGridView1.Columns[2].Visible = true;
             dataGridView1.Columns[3].Visible = true;
             dataGridView1.Columns[4].Visible = true;
+
             //Ширина полей
             dataGridView1.Columns[0].FillWeight = 15;
             dataGridView1.Columns[1].FillWeight = 40;
@@ -186,7 +187,7 @@ namespace NET_and_MySQL
             //Показываем заголовки столбцов
             dataGridView1.ColumnHeadersVisible = true;
             //Вызываем метод покраски ДатаГрид
-            ChangeColorDGV();
+           ChangeColorDGV();
         }
 
         //Метод изменения цвета строк, в зависимости от значения поля записи в таблице
