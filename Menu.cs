@@ -75,6 +75,8 @@ namespace NET_and_MySQL
         {
             Form10 Form10 = new Form10();
             Form10.ShowDialog();
+            toolStripStatusLabel2.Text = ControlData.ID_STUD;
+
         }
     }
 }

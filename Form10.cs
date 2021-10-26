@@ -46,6 +46,7 @@ namespace NET_and_MySQL
             id_selected_rows = dataGridView1.Rows[Convert.ToInt32(index_selected_rows)].Cells[0].Value.ToString();
             //Указываем ID выделенной строки в метке
             toolStripLabel4.Text = id_selected_rows;
+            ControlData.ID_STUD = id_selected_rows;
         }
   
         //Выделение всей строки по ЛКМ

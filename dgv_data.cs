@@ -15,6 +15,8 @@ namespace NET_and_MySQL
 {
     class ControlData
     {
+        //Определяем  поле, которое харнит ID студенты из From10 и выводится в форме Menu
+        public static string ID_STUD = "0";
         //Определяем параметры подключения
         private const string host = "caseum.ru";
         private const string port = "33333";
