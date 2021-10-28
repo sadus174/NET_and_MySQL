@@ -90,5 +90,17 @@ namespace NET_and_MySQL
             Form12 Form12 = new Form12();
             Form12.ShowDialog();
         }
+
+        private void dbtestDataSetBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "db_testDataSet1.DataTable". При необходимости она может быть перемещена или удалена.
+            this.dataTableTableAdapter.Fill(this.db_testDataSet1.DataTable);
+
+        }
     }
 }

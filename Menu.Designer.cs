@@ -154,7 +154,7 @@ namespace NET_and_MySQL
             this.toolStripStatusLabel2});
             this.statusStrip1.Location = new System.Drawing.Point(0, 428);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(273, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(283, 22);
             this.statusStrip1.TabIndex = 10;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -194,7 +194,7 @@ namespace NET_and_MySQL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(273, 450);
+            this.ClientSize = new System.Drawing.Size(283, 450);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.statusStrip1);
@@ -210,6 +210,7 @@ namespace NET_and_MySQL
             this.Controls.Add(this.button1);
             this.Name = "Menu";
             this.Text = "Главное меню";
+            this.Load += new System.EventHandler(this.Menu_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
