@@ -84,5 +84,11 @@ namespace NET_and_MySQL
             Form11 Form11= new Form11();
             Form11.ShowDialog();
         }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            Form12 Form12 = new Form12();
+            Form12.ShowDialog();
+        }
     }
 }

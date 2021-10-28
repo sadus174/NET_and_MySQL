@@ -6,6 +6,12 @@ using System.Windows.Forms;
 
 namespace NET_and_MySQL
 {
+    //Класс для передачи значений между формами
+    static class SomeClass
+    {
+        //Статичное поле, которое хранить значение
+        public static string variable_class;
+    }
     static class Program
     {
         /// <summary>
