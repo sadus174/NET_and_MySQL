@@ -49,7 +49,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="db_testDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_testDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dgv_data.cs" />
+    <Compile Include="Form11-add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form11-add.Designer.cs">
+      <DependentUpon>Form11-add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form11-edit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form11-edit.Designer.cs">
+      <DependentUpon>Form11-edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form12-2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form12-2.Designer.cs">
+      <DependentUpon>Form12-2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form12.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form12.Designer.cs">
+      <DependentUpon>Form12.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form4.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +127,12 @@
     <Compile Include="Form10.Designer.cs">
       <DependentUpon>Form10.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form11.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form11.Designer.cs">
+      <DependentUpon>Form11.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form8.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +153,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form11-add.resx">
+      <DependentUpon>Form11-add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form11-edit.resx">
+      <DependentUpon>Form11-edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form12-2.resx">
+      <DependentUpon>Form12-2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form12.resx">
+      <DependentUpon>Form12.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form4.resx">
       <DependentUpon>Form4.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,6 +189,9 @@
     <EmbeddedResource Include="Form10.resx">
       <DependentUpon>Form10.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form11.resx">
+      <DependentUpon>Form11.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form8.resx">
       <DependentUpon>Form8.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,6 +210,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="db_testDataSet.xsc">
+      <DependentUpon>db_testDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="db_testDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>db_testDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="db_testDataSet.xss">
+      <DependentUpon>db_testDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

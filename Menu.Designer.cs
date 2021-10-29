@@ -42,6 +42,8 @@ namespace NET_and_MySQL
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -152,7 +154,7 @@ namespace NET_and_MySQL
             this.toolStripStatusLabel2});
             this.statusStrip1.Location = new System.Drawing.Point(0, 428);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(273, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(283, 22);
             this.statusStrip1.TabIndex = 10;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -168,11 +170,33 @@ namespace NET_and_MySQL
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(84, 17);
             this.toolStripStatusLabel2.Text = "Не определён";
             // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(13, 303);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(250, 23);
+            this.button11.TabIndex = 11;
+            this.button11.Text = "DataGridView + ComboBox";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(13, 332);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(250, 23);
+            this.button12.TabIndex = 12;
+            this.button12.Text = "Передача данных между формами";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(273, 450);
+            this.ClientSize = new System.Drawing.Size(283, 450);
+            this.Controls.Add(this.button12);
+            this.Controls.Add(this.button11);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button9);
@@ -186,6 +210,7 @@ namespace NET_and_MySQL
             this.Controls.Add(this.button1);
             this.Name = "Menu";
             this.Text = "Главное меню";
+            this.Load += new System.EventHandler(this.Menu_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -208,6 +233,8 @@ namespace NET_and_MySQL
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button12;
     }
 }
 

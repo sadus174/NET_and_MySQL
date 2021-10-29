@@ -78,5 +78,29 @@ namespace NET_and_MySQL
             toolStripStatusLabel2.Text = ControlData.ID_STUD;
 
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            Form11 Form11= new Form11();
+            Form11.ShowDialog();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            Form12 Form12 = new Form12();
+            Form12.ShowDialog();
+        }
+
+        private void dbtestDataSetBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "db_testDataSet1.DataTable". При необходимости она может быть перемещена или удалена.
+            this.dataTableTableAdapter.Fill(this.db_testDataSet1.DataTable);
+
+        }
     }
 }
