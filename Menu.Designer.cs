@@ -210,7 +210,6 @@ namespace NET_and_MySQL
             this.Controls.Add(this.button1);
             this.Name = "Menu";
             this.Text = "Главное меню";
-            this.Load += new System.EventHandler(this.Menu_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
