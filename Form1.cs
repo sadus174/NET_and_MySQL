@@ -22,7 +22,8 @@ namespace NET_and_MySQL
         private void Form1_Load(object sender, EventArgs e)
         {
             // строка подключения к БД
-            string connStr = "server=caseum.ru;port=33333;user=test_user;database=db_test;password=test_pass;";
+            string connStr = "server=caseum.ru;port=33333;user=test_user;" +
+                "database=db_test;password=test_pass;";
             // создаём объект для подключения к БД
             conn = new MySqlConnection(connStr);
 
