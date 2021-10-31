@@ -49,6 +49,7 @@ namespace NET_and_MySQL
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.выделенныйИДToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -71,9 +72,10 @@ namespace NET_and_MySQL
             this.удалитьЗаписьToolStripMenuItem,
             this.отчислитьСтудентаToolStripMenuItem,
             this.зачислитьСтудентаToolStripMenuItem,
-            this.изменитьСтудентаToolStripMenuItem});
+            this.изменитьСтудентаToolStripMenuItem,
+            this.выделенныйИДToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(184, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(184, 136);
             // 
             // удалитьЗаписьToolStripMenuItem
             // 
@@ -199,6 +201,13 @@ namespace NET_and_MySQL
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
+            // выделенныйИДToolStripMenuItem
+            // 
+            this.выделенныйИДToolStripMenuItem.Name = "выделенныйИДToolStripMenuItem";
+            this.выделенныйИДToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.выделенныйИДToolStripMenuItem.Text = "Выделенный ИД";
+            this.выделенныйИДToolStripMenuItem.Click += new System.EventHandler(this.выделенныйИДToolStripMenuItem_Click);
+            // 
             // Form8
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,5 +247,6 @@ namespace NET_and_MySQL
         private System.Windows.Forms.ToolStripMenuItem отчислитьСтудентаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem зачислитьСтудентаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem изменитьСтудентаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem выделенныйИДToolStripMenuItem;
     }
 }

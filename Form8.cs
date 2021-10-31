@@ -130,7 +130,8 @@ namespace NET_and_MySQL
         public void GetListUsers()
         {
             //Запрос для вывода строк в БД
-            string commandStr = "SELECT id AS 'Код', fio AS 'ФИО', age AS 'Возраст', theme_kurs AS 'Тема курсовой', id_state AS 'Статус' FROM t_stud";
+            string commandStr = "SELECT id AS 'Код', fio AS 'ФИО', age AS 'Возраст', " +
+                "theme_kurs AS 'Тема курсовой', id_state AS 'Статус' FROM t_stud";
             //Открываем соединение
             conn.Open();
             //Объявляем команду, которая выполнить запрос в соединении conn
@@ -213,6 +214,11 @@ namespace NET_and_MySQL
                     //Красим в зелёный
                     dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Green;
                 }
+                if (id_selected_status == 3)
+                {
+                    //Красим в желтый
+                    dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.Cyan;
+                }
             }
         }
 
@@ -267,6 +273,11 @@ namespace NET_and_MySQL
         private void зачислитьСтудентаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChangeStateStudent("2");
+        }
+
+        private void выделенныйИДToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(id_selected_rows);
         }
     }
 }
