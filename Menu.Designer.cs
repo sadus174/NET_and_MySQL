@@ -60,7 +60,7 @@ namespace NET_and_MySQL
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(11, 42);
+            this.button2.Location = new System.Drawing.Point(13, 42);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(250, 23);
             this.button2.TabIndex = 1;
@@ -120,7 +120,7 @@ namespace NET_and_MySQL
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(11, 216);
+            this.button8.Location = new System.Drawing.Point(13, 216);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(250, 23);
             this.button8.TabIndex = 7;
@@ -130,7 +130,7 @@ namespace NET_and_MySQL
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(11, 245);
+            this.button9.Location = new System.Drawing.Point(13, 245);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(250, 23);
             this.button9.TabIndex = 8;
@@ -140,7 +140,7 @@ namespace NET_and_MySQL
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(11, 274);
+            this.button10.Location = new System.Drawing.Point(13, 274);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(250, 23);
             this.button10.TabIndex = 9;
@@ -153,9 +153,9 @@ namespace NET_and_MySQL
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 428);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 401);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(283, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(276, 22);
             this.statusStrip1.TabIndex = 10;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -205,7 +205,7 @@ namespace NET_and_MySQL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(283, 450);
+            this.ClientSize = new System.Drawing.Size(276, 423);
             this.Controls.Add(this.button13);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.button11);
