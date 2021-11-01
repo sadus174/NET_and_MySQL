@@ -9,7 +9,7 @@ namespace NET_and_MySQL
     //Класс для передачи значений между формами
     static class SomeClass
     {
-        //Статичное поле, которое хранить значение
+        //Статичное поле, которое хранит значение для передачи его между формами
         public static string variable_class;
     }
     static class Program
