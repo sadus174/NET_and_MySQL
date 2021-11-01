@@ -34,6 +34,7 @@ namespace NET_and_MySQL
         //Выделение всей строки по ПКМ
         private void dataGridView1_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
         {
+            //Это тоже магические строки, в них тоже не вникайте
             if (!e.RowIndex.Equals(-1) && !e.ColumnIndex.Equals(-1) && e.Button.Equals(MouseButtons.Right))
             {
                 dataGridView1.CurrentCell = dataGridView1[e.ColumnIndex, e.RowIndex];
@@ -114,7 +115,6 @@ namespace NET_and_MySQL
             dataGridView1.RowHeadersVisible = false;
             //Показываем заголовки столбцов
             dataGridView1.ColumnHeadersVisible = true;
-            //Вызываем метод покраски ДатаГрид
         }
 
         //Кнопка обновления 
@@ -130,8 +130,8 @@ namespace NET_and_MySQL
         {
             //Конструкция "LIKE" является способом "поиска" в полях. Это обычный синтаксис SQL
             bSource.Filter = "ФИО LIKE'" + toolStripTextBox1.Text + "%'";
-
         }
+
         //Фильрация в элементе DataGrid. В случае, если используется соединение через BindingSource
         //вы можете фильтровать его, так как данный элемент поддерживает базовый синтаксис SQL
         private void toolStripTextBox2_TextChanged(object sender, EventArgs e)
@@ -139,7 +139,8 @@ namespace NET_and_MySQL
             //Конструкция "LIKE" является способом "поиска" в полях
             bSource.Filter = "[Тема курсовой] LIKE'" + toolStripTextBox2.Text + "%'";
         }
-
+        
+        //Кнопка очистки фильтрующих текстбоксов
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             toolStripTextBox1.Text = "";
