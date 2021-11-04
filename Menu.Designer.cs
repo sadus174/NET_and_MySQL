@@ -45,6 +45,7 @@ namespace NET_and_MySQL
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -153,7 +154,7 @@ namespace NET_and_MySQL
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 401);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 462);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(276, 22);
             this.statusStrip1.TabIndex = 10;
@@ -201,11 +202,21 @@ namespace NET_and_MySQL
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(14, 390);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(250, 23);
+            this.button14.TabIndex = 14;
+            this.button14.Text = "Нереализованный функционал";
+            this.button14.UseVisualStyleBackColor = true;
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(276, 423);
+            this.ClientSize = new System.Drawing.Size(276, 484);
+            this.Controls.Add(this.button14);
             this.Controls.Add(this.button13);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.button11);
@@ -247,6 +258,7 @@ namespace NET_and_MySQL
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button14;
     }
 }
 
