@@ -43,8 +43,14 @@ namespace NET_and_MySQL
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.idItems = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titleItems = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.countItems = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceItems = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -164,7 +170,7 @@ namespace NET_and_MySQL
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(712, 146);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(540, 264);
+            this.listBox1.Size = new System.Drawing.Size(540, 95);
             this.listBox1.TabIndex = 12;
             // 
             // button3
@@ -177,11 +183,53 @@ namespace NET_and_MySQL
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idItems,
+            this.titleItems,
+            this.countItems,
+            this.priceItems});
+            this.dataGridView2.Location = new System.Drawing.Point(712, 259);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(540, 150);
+            this.dataGridView2.TabIndex = 14;
+            // 
+            // idItems
+            // 
+            this.idItems.HeaderText = "Код товара";
+            this.idItems.Name = "idItems";
+            this.idItems.ReadOnly = true;
+            this.idItems.Visible = false;
+            // 
+            // titleItems
+            // 
+            this.titleItems.HeaderText = "Наименование товара";
+            this.titleItems.Name = "titleItems";
+            this.titleItems.ReadOnly = true;
+            // 
+            // countItems
+            // 
+            this.countItems.HeaderText = "Количество товаров";
+            this.countItems.Name = "countItems";
+            this.countItems.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // priceItems
+            // 
+            this.priceItems.HeaderText = "Стоимость";
+            this.priceItems.Name = "priceItems";
+            this.priceItems.Visible = false;
+            // 
             // Form15
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1305, 526);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.statusStrip1);
@@ -201,6 +249,7 @@ namespace NET_and_MySQL
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,5 +271,10 @@ namespace NET_and_MySQL
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idItems;
+        private System.Windows.Forms.DataGridViewTextBoxColumn titleItems;
+        private System.Windows.Forms.DataGridViewTextBoxColumn countItems;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceItems;
     }
 }
