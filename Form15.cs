@@ -34,6 +34,8 @@ namespace NET_and_MySQL
         string titleItems_selected_rows = "";
         //Переменная которая хранит стоимость товара
         string priceItems_selected_rows = "";
+        //Перемененная отвечающая за понимание, создан ли заказ
+        bool issetOrder = false;
 
         public void GetComboBox1()
         {
@@ -373,64 +375,71 @@ namespace NET_and_MySQL
             id_selected_clients = comboBox3.SelectedValue.ToString();
             //Создание заказа с запоминанием ID этого самого заказа, она нужна для формирования позиций в составе зказа
             InsertOrderMain();
+            //Изменение переменной отчечающей за понимание, создан ли заказ
+            issetOrder = true;
 
         }
 
         //Добавление позиций во временную корзину
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            listBox1.Items.Add($"В корзину добавлен товар: {titleItems_selected_rows} c индексом {id_selected_rows}");
+            //Индекс добавленной строки
             int rowNumber = dataGridView2.Rows.Add();
-
+            //Распихивание данных по полям грида
             dataGridView2.Rows[rowNumber].Cells[0].Value = id_selected_rows;
             dataGridView2.Rows[rowNumber].Cells[1].Value = titleItems_selected_rows;
             dataGridView2.Rows[rowNumber].Cells[2].Value = "1";
             dataGridView2.Rows[rowNumber].Cells[3].Value = priceItems_selected_rows;
-
-
-
         }
 
         //Кнопка для записи в БД информации о позициях заказа и обновление итоговой суммы заказа
         private void button3_Click(object sender, EventArgs e)
         {
-            //переменная хранящая итоговую сумму заказа
-            double sumOrder = 0;
-            //Определяем количество товаров в DataGridView2
-            int countPosition = dataGridView2.Rows.Count;
-            //Определяем цикл для добавление позиций заказа в таблицу
-            conn.Open();
-            for (int i=0; i<countPosition; i++)
+            if (issetOrder)
             {
-                string idItems = dataGridView2.Rows[i].Cells[0].Value.ToString();
-                string countItems = dataGridView2.Rows[i].Cells[2].Value.ToString();
-                double priceItems = Convert.ToDouble(dataGridView2.Rows[i].Cells[3].Value);
+                //переменная хранящая итоговую сумму заказа
+                double sumOrder = 0;
+                //Определяем количество товаров в DataGridView2
+                int countPosition = dataGridView2.Rows.Count;
+                //Определяем цикл для добавление позиций заказа в таблицу
+                conn.Open();
+                for (int i = 0; i < countPosition; i++)
+                {
+                    string idItems = dataGridView2.Rows[i].Cells[0].Value.ToString();
+                    string countItems = dataGridView2.Rows[i].Cells[2].Value.ToString();
+                    double priceItems = Convert.ToDouble(dataGridView2.Rows[i].Cells[3].Value);
 
-                string idOrder = SomeClass.new_inserted_mainOrder_id;
-                //Подсчёт итоговой суммы
-                sumOrder += Convert.ToInt32(countItems) * priceItems;
-                string query = $"INSERT INTO t_positionOrders (idItems, countItems, idMainOrders) " +
-                    $"VALUES ('{idItems}', '{countItems}', {idOrder})";
-                MessageBox.Show(query);
+                    string idOrder = SomeClass.new_inserted_mainOrder_id;
+                    //Подсчёт итоговой суммы
+                    sumOrder += Convert.ToInt32(countItems) * priceItems;
+                    //Формирование запросов на добавение позиций заказа
+                    string query = $"INSERT INTO t_positionOrders (idItems, countItems, idMainOrders) " +
+                        $"VALUES ('{idItems}', '{countItems}', {idOrder})";
+                    // объект для выполнения SQL-запроса
+                    MySqlCommand command = new MySqlCommand(query, conn);
+                    // выполняем запрос
+                    command.ExecuteNonQuery();
+                    // закрываем подключение к БД
+                }
+                conn.Close();
+
+                //Обновление итоговой суммы заказа
+                toolStripStatusLabel1.Text = $"Итоговая сумма заказа №{SomeClass.new_inserted_mainOrder_id} составляет {sumOrder}";
+                //Открываем подключение к БД
+                conn.Open();
+                // запрос обновления данных
+                string query2 = $"UPDATE t_order SET sumOrder='{sumOrder}' WHERE (idOrder='{SomeClass.new_inserted_mainOrder_id}')";
                 // объект для выполнения SQL-запроса
-                MySqlCommand command = new MySqlCommand(query, conn);
+                MySqlCommand comman1 = new MySqlCommand(query2, conn);
                 // выполняем запрос
-                command.ExecuteNonQuery();
+                comman1.ExecuteNonQuery();
                 // закрываем подключение к БД
+                conn.Close();
             }
-            conn.Close();
-
-            //Обновление итоговой суммы заказа
-            toolStripStatusLabel1.Text = $"Итоговая сумма заказа №{SomeClass.new_inserted_mainOrder_id} составляет {sumOrder}";
-            conn.Open();
-            // запрос обновления данных
-            string query2 = $"UPDATE t_order SET sumOrder='{sumOrder}' WHERE (idOrder='{SomeClass.new_inserted_mainOrder_id}')";
-            // объект для выполнения SQL-запроса
-            MySqlCommand comman1 = new MySqlCommand(query2, conn);
-            // выполняем запрос
-            comman1.ExecuteNonQuery();
-            // закрываем подключение к БД
-            conn.Close();
+            else
+            {
+                MessageBox.Show("Заказ не создан. Создайте заказ!");
+            }
         }
     }
 }
