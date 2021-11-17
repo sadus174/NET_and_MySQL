@@ -101,5 +101,11 @@ namespace NET_and_MySQL
             Form14 Form14 = new Form14();
             Form14.ShowDialog();
         }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            Form15 Form15 = new Form15();
+            Form15.ShowDialog();
+        }
     }
 }

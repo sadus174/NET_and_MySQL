@@ -221,6 +221,7 @@ namespace NET_and_MySQL
             this.button15.TabIndex = 15;
             this.button15.Text = "Формирование заказа";
             this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
             // Menu
             // 

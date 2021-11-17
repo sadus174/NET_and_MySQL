@@ -11,6 +11,11 @@ namespace NET_and_MySQL
     {
         //Статичное поле, которое хранит значение для передачи его между формами
         public static string variable_class;
+        //Статичное поле, которое хранит значения ID добавленного клиента на Form15-addClient
+        public static string new_inserted_id;
+        //Статичное поле, которое хранит значение ID добаленного заказа
+        public static string new_inserted_mainOrder_id;
+
     }
     static class Program
     {
