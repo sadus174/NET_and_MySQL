@@ -208,8 +208,9 @@ namespace NET_and_MySQL
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(250, 23);
             this.button14.TabIndex = 14;
-            this.button14.Text = "Нереализованный функционал";
+            this.button14.Text = "Зависимые ComboBox\'ы";
             this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // Menu
             // 
