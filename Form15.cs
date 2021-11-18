@@ -36,6 +36,8 @@ namespace NET_and_MySQL
         string priceItems_selected_rows = "";
         //Перемененная отвечающая за понимание, создан ли заказ
         bool issetOrder = false;
+        //Переменная для подсчёта предварительной суммы заказа
+        double prSumOrder = 0;
 
         public void GetComboBox1()
         {
@@ -171,7 +173,7 @@ namespace NET_and_MySQL
         {
             InitializeComponent();
         }
-
+        //Событие загрузки формы
         private void Form14_Load(object sender, EventArgs e)
         {
             // строка подключения к БД
@@ -209,7 +211,7 @@ namespace NET_and_MySQL
             //Показываем заголовки столбцов
             dataGridView1.ColumnHeadersVisible = true;
         }
-
+        //Событие на выборе значения в первом комбобоксе
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Включение ComboBox2
@@ -219,7 +221,7 @@ namespace NET_and_MySQL
             //Установка пустой строки по умолчанию в ComboBox2
             comboBox2.Text = "";
         }
-
+        //Событие на выборе значения во втором комбобоксе
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Чистим виртуальную таблицу
@@ -248,6 +250,7 @@ namespace NET_and_MySQL
             //Показываем заголовки столбцов
             dataGridView1.ColumnHeadersVisible = true;
         }
+        //Метод загрузки товаров в грид1 без условия, то есть грузятся все товары
         public void GetFirstListUsers()
         {
             //Запрос для вывода строк в БД
@@ -390,6 +393,11 @@ namespace NET_and_MySQL
             dataGridView2.Rows[rowNumber].Cells[1].Value = titleItems_selected_rows;
             dataGridView2.Rows[rowNumber].Cells[2].Value = "1";
             dataGridView2.Rows[rowNumber].Cells[3].Value = priceItems_selected_rows;
+            dataGridView2.Rows[rowNumber].Cells[4].Value = priceItems_selected_rows;
+            //Обновление итоговой суммы заказа
+            prSumOrder += Convert.ToDouble(dataGridView2.Rows[rowNumber].Cells[4].Value) * Convert.ToDouble(dataGridView2.Rows[rowNumber].Cells[2].Value);
+            //Вывод предварительной итоговой суммы заказа
+            label6.Text = prSumOrder.ToString();
         }
 
         //Кнопка для записи в БД информации о позициях заказа и обновление итоговой суммы заказа
@@ -405,10 +413,11 @@ namespace NET_and_MySQL
                 conn.Open();
                 for (int i = 0; i < countPosition; i++)
                 {
+                    //Задание переменных для формирования запроса в БД
                     string idItems = dataGridView2.Rows[i].Cells[0].Value.ToString();
                     string countItems = dataGridView2.Rows[i].Cells[2].Value.ToString();
                     double priceItems = Convert.ToDouble(dataGridView2.Rows[i].Cells[3].Value);
-
+                    //Получение номера заказа в рамках которого добавляются позиции
                     string idOrder = SomeClass.new_inserted_mainOrder_id;
                     //Подсчёт итоговой суммы
                     sumOrder += Convert.ToInt32(countItems) * priceItems;
@@ -435,11 +444,40 @@ namespace NET_and_MySQL
                 comman1.ExecuteNonQuery();
                 // закрываем подключение к БД
                 conn.Close();
+                //Чистим корзину
+                dataGridView2.Rows.Clear();
+                //Чистим переменную хранящую созданный заказ
+                SomeClass.new_inserted_mainOrder_id = "0";
             }
             else
             {
                 MessageBox.Show("Заказ не создан. Создайте заказ!");
             }
+        }
+
+        private void dataGridView2_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            //Обнуляем предварительную сумму заказа
+            prSumOrder = 0;
+            //Определяем индекс выбранной строки
+            int selRowNum = dataGridView2.CurrentCell.RowIndex;
+            //Формируем тоговую сумму по позиции
+            double itogPosition = Convert.ToDouble(dataGridView2.Rows[selRowNum].Cells[3].Value)* Convert.ToDouble(dataGridView2.Rows[selRowNum].Cells[2].Value);
+            //Присваиваем итоговую сумму в ячейку
+            dataGridView2.Rows[selRowNum].Cells[4].Value = itogPosition.ToString();
+            //Определяем количество товаров в DataGridView2
+            int countPosition = dataGridView2.Rows.Count;
+            //Определяем цикл для добавление позиций заказа в таблицу
+            
+            for (int i = 0; i < countPosition; i++)
+            {               
+                string countItems = dataGridView2.Rows[i].Cells[2].Value.ToString();
+                double priceItems = Convert.ToDouble(dataGridView2.Rows[i].Cells[3].Value);
+                //Подсчёт итоговой суммы
+                prSumOrder += Convert.ToInt32(countItems) * priceItems;                
+            }
+            //Вывод обновлённый суммы заказа в лэйбл
+            label6.Text = prSumOrder.ToString();
         }
     }
 }

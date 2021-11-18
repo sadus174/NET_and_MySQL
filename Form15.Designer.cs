@@ -47,6 +47,9 @@ namespace NET_and_MySQL
             this.titleItems = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.countItems = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceItems = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Itog = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -154,7 +157,7 @@ namespace NET_and_MySQL
             this.toolStripStatusLabel1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 504);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1305, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1264, 22);
             this.statusStrip1.TabIndex = 11;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -166,9 +169,9 @@ namespace NET_and_MySQL
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(712, 442);
+            this.button3.Location = new System.Drawing.Point(712, 466);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(540, 53);
+            this.button3.Size = new System.Drawing.Size(540, 29);
             this.button3.TabIndex = 13;
             this.button3.Text = "Продажа";
             this.button3.UseVisualStyleBackColor = true;
@@ -184,11 +187,13 @@ namespace NET_and_MySQL
             this.idItems,
             this.titleItems,
             this.countItems,
-            this.priceItems});
-            this.dataGridView2.Location = new System.Drawing.Point(712, 146);
+            this.priceItems,
+            this.Itog});
+            this.dataGridView2.Location = new System.Drawing.Point(712, 26);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(540, 263);
+            this.dataGridView2.Size = new System.Drawing.Size(540, 383);
             this.dataGridView2.TabIndex = 14;
+            this.dataGridView2.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellEndEdit);
             // 
             // idItems
             // 
@@ -213,13 +218,40 @@ namespace NET_and_MySQL
             // 
             this.priceItems.HeaderText = "Стоимость";
             this.priceItems.Name = "priceItems";
-            this.priceItems.Visible = false;
+            // 
+            // Itog
+            // 
+            this.Itog.HeaderText = "Итог";
+            this.Itog.Name = "Itog";
+            this.Itog.ReadOnly = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(707, 425);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(378, 25);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Итоговая сумма заказа составляет: ";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(1074, 425);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(24, 25);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "0";
             // 
             // Form15
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1305, 526);
+            this.ClientSize = new System.Drawing.Size(1264, 526);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.statusStrip1);
@@ -265,5 +297,8 @@ namespace NET_and_MySQL
         private System.Windows.Forms.DataGridViewTextBoxColumn titleItems;
         private System.Windows.Forms.DataGridViewTextBoxColumn countItems;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceItems;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Itog;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }
