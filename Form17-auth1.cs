@@ -62,14 +62,17 @@ namespace NET_and_MySQL
             Form17_auth2 form17_Auth2 = new Form17_auth2();
             //Вызов формы в режиме диалога
             form17_Auth2.ShowDialog();
-
+            //Если авторизации была успешна и в поле класса хранится истина, то
             if(Auth.auth)
             {
+                //Отображаем рабочую форму
                 this.Show();
+                //Вытаскиваем из класса поля в label'ы
                 label5.Text = Auth.auth_id;
                 label4.Text = Auth.auth_fio;
                 label6.Text = "Успешна!";
                 label6.ForeColor = Color.Green;
+                //Вызываем метод управления ролями
                 ManagerRole(Auth.auth_role);
 
 
