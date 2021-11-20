@@ -17,6 +17,43 @@ namespace NET_and_MySQL
             InitializeComponent();
         }
 
+        //Метод расстановки функционала формы взависимости от роли пользователя
+        public void ManagerRole(int role)
+        {
+            switch (role)
+            {
+                case 1:
+                    label8.Text = "Максимальный";
+                    label8.ForeColor = Color.Green;
+                    button1.Enabled = true;
+                    button2.Enabled = true;
+                    button3.Enabled = true;
+                    break;
+
+                case 2:
+                    label8.Text = "Умеренный";
+                    label8.ForeColor = Color.YellowGreen;
+                    button1.Enabled = false;
+                    button2.Enabled = true;
+                    button3.Enabled = true;
+                    break;
+
+                case 3:
+                    label8.Text = "Минимальный";
+                    label8.ForeColor = Color.Yellow;
+                    button1.Enabled = false;
+                    button2.Enabled = false;
+                    button3.Enabled = true;
+                    break;
+                default:
+                    label8.Text = "Неопределённый";
+                    label8.ForeColor = Color.Red;
+                    button1.Enabled = false;
+                    button2.Enabled = false;
+                    button3.Enabled = false;
+                    break;
+            }
+        }
         private void Form17_auth1_Load(object sender, EventArgs e)
         {
             //Сокрытие текущей формы
@@ -31,6 +68,11 @@ namespace NET_and_MySQL
                 this.Show();
                 label5.Text = Auth.auth_id;
                 label4.Text = Auth.auth_fio;
+                label6.Text = "Успешна!";
+                label6.ForeColor = Color.Green;
+                ManagerRole(Auth.auth_role);
+
+
             }
             else
             {

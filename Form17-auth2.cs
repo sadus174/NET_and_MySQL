@@ -52,6 +52,7 @@ namespace NET_and_MySQL
                 // элементы массива [] - это значения столбцов из запроса SELECT
                 Auth.auth_id = reader[0].ToString();
                 Auth.auth_fio = reader[1].ToString();
+                Auth.auth_role = Convert.ToInt32(reader[4].ToString());
             }
             reader.Close(); // закрываем reader
             // закрываем соединение с БД
@@ -78,13 +79,15 @@ namespace NET_and_MySQL
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
             MySqlCommand command = new MySqlCommand(sql, conn);
+            //Определяем параметры
             command.Parameters.Add("@un", MySqlDbType.VarChar, 25);
             command.Parameters.Add("@up", MySqlDbType.VarChar, 25);
-
+            //Присваиваем параметрам значение
             command.Parameters["@un"].Value = textBox1.Text;
             command.Parameters["@up"].Value = sha256(textBox2.Text);
-
+            //Заносим команду в адаптер
             adapter.SelectCommand = command;
+            //Заполняем таблицу
             adapter.Fill(table);
             //Закрываем соединение
             conn.Close();
@@ -97,7 +100,6 @@ namespace NET_and_MySQL
                 GetUserInfo(textBox1.Text);
                 //Закрываем форму
                 this.Close();
-
             }
             else
             {
@@ -114,6 +116,36 @@ namespace NET_and_MySQL
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             textBox3.Text = sha256(textBox2.Text);
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = label4.Text;
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            textBox2.Text = label5.Text;
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = label7.Text;
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            textBox2.Text = label6.Text;
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = label9.Text;
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            textBox2.Text = label8.Text;
         }
     }
 }
