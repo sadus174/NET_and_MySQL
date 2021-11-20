@@ -23,6 +23,7 @@ namespace NET_and_MySQL
         //Вычисление хэша строки и возрат его из метода
         static string sha256(string randomString)
         {
+            //Тут происходит криптографическая магия. Смысл данного метода заключается в том, что строка залетает в метод
             var crypt = new System.Security.Cryptography.SHA256Managed();
             var hash = new System.Text.StringBuilder();
             byte[] crypto = crypt.ComputeHash(Encoding.UTF8.GetBytes(randomString));
@@ -71,13 +72,15 @@ namespace NET_and_MySQL
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //Запрос в БД на предмет того, если ли строка с подходящим логином и паролем
             string sql = "SELECT * FROM t_user WHERE loginUser = @un and  passUser= @up";
-
+            //Открытие соединения
             conn.Open();
-
+            //Объявляем таблицу
             DataTable table = new DataTable();
+            //Объявляем адаптер
             MySqlDataAdapter adapter = new MySqlDataAdapter();
-
+            //Объявляем команду
             MySqlCommand command = new MySqlCommand(sql, conn);
             //Определяем параметры
             command.Parameters.Add("@un", MySqlDbType.VarChar, 25);
@@ -103,20 +106,29 @@ namespace NET_and_MySQL
             }
             else
             {
+                //Отобразить сообщение о том, что авторизаия неуспешна
                 MessageBox.Show("Неверные данные авторизации!");
-            }
-            
+            }           
         }
 
         private void Form17_auth2_Load(object sender, EventArgs e)
         {
+            //Инициализируем соединение с подходящей строкой
             conn = new MySqlConnection(connStr);
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
+            //В текстбокс3 формируется хэш по мере ввода текста во второй текстбокс, используется метод шифрования (хэширования)
             textBox3.Text = sha256(textBox2.Text);
         }
+        //**************************************************//
+        //                                                  //
+        //                                                  //
+        //      Тут всякие методы, которые отвечают         //
+        //      за быстрое заполнения текстбоксов           //                                 
+        //                                                  //
+        //**************************************************//
 
         private void label4_Click(object sender, EventArgs e)
         {
