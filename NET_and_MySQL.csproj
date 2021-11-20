@@ -98,6 +98,18 @@
     <Compile Include="Form16.Designer.cs">
       <DependentUpon>Form16.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form17-auth1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form17-auth1.Designer.cs">
+      <DependentUpon>Form17-auth1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form17-auth2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form17-auth2.Designer.cs">
+      <DependentUpon>Form17-auth2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form4.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +213,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form16.resx">
       <DependentUpon>Form16.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form17-auth1.resx">
+      <DependentUpon>Form17-auth1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form17-auth2.resx">
+      <DependentUpon>Form17-auth2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form4.resx">
       <DependentUpon>Form4.cs</DependentUpon>

@@ -17,6 +17,17 @@ namespace NET_and_MySQL
         public static string new_inserted_mainOrder_id;
 
     }
+
+    static class Auth
+    {
+        //Статичное поле, которое хранит значение статуса авторизации
+        public static bool auth;
+        //Статичное поле, которое хранит значения ID пользователя
+        public static string auth_id;
+        //Статичное поле, которое хранит значения ФИО пользователя
+        public static string auth_fio;
+    }
+
     static class Program
     {
         /// <summary>
