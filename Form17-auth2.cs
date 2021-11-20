@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
+
 namespace NET_and_MySQL
 {
     public partial class Form17_auth2 : Form
@@ -17,7 +18,22 @@ namespace NET_and_MySQL
         string connStr = "server=caseum.ru;port=33333;user=test_user;database=db_test;password=test_pass;";
         //Переменная соединения
         MySqlConnection conn;
+        //Логин и пароль к данной форме Вы сможете посмотреть в БД db_test таблице t_user
 
+        //Вычисление хэша строки и возрат его из метода
+        static string sha256(string randomString)
+        {
+            var crypt = new System.Security.Cryptography.SHA256Managed();
+            var hash = new System.Text.StringBuilder();
+            byte[] crypto = crypt.ComputeHash(Encoding.UTF8.GetBytes(randomString));
+            foreach (byte theByte in crypto)
+            {
+                hash.Append(theByte.ToString("x2"));
+            }
+            return hash.ToString();
+        }
+
+        //Метод запроса данных пользователя по логину для запоминания их в полях класса
         public void GetUserInfo(string login_user)
         {
             //Объявлем переменную для запроса в БД
@@ -66,7 +82,7 @@ namespace NET_and_MySQL
             command.Parameters.Add("@up", MySqlDbType.VarChar, 25);
 
             command.Parameters["@un"].Value = textBox1.Text;
-            command.Parameters["@up"].Value = textBox2.Text;
+            command.Parameters["@up"].Value = sha256(textBox2.Text);
 
             adapter.SelectCommand = command;
             adapter.Fill(table);
@@ -93,6 +109,11 @@ namespace NET_and_MySQL
         private void Form17_auth2_Load(object sender, EventArgs e)
         {
             conn = new MySqlConnection(connStr);
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            textBox3.Text = sha256(textBox2.Text);
         }
     }
 }

@@ -41,7 +41,7 @@ namespace NET_and_MySQL
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(266, 9);
+            this.label1.Location = new System.Drawing.Point(190, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(305, 32);
             this.label1.TabIndex = 0;
