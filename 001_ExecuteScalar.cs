@@ -11,9 +11,9 @@ using MySql.Data.MySqlClient;
 
 namespace NET_and_MySQL
 {
-    public partial class Form1 : Form
+    public partial class ExecuteScalar : Form
     {
-        public Form1()
+        public ExecuteScalar()
         {
             InitializeComponent();
         }

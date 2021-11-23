@@ -53,143 +53,143 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dgv_data.cs" />
-    <Compile Include="Form11-add.cs">
+    <Compile Include="011_ExecuteNonQuery_Combobox_INSERT.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form11-add.Designer.cs">
-      <DependentUpon>Form11-add.cs</DependentUpon>
+    <Compile Include="011_ExecuteNonQuery_Combobox_INSERT.Designer.cs">
+      <DependentUpon>011_ExecuteNonQuery_Combobox_INSERT.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form11-edit.cs">
+    <Compile Include="012_ExecuteNonQuery_Combobox_UPDATE.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form11-edit.Designer.cs">
-      <DependentUpon>Form11-edit.cs</DependentUpon>
+    <Compile Include="012_ExecuteNonQuery_Combobox_UPDATE.Designer.cs">
+      <DependentUpon>012_ExecuteNonQuery_Combobox_UPDATE.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form12-2.cs">
+    <Compile Include="015_GlobalClass_END.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form12-2.Designer.cs">
-      <DependentUpon>Form12-2.cs</DependentUpon>
+    <Compile Include="015_GlobalClass_END.Designer.cs">
+      <DependentUpon>015_GlobalClass_END.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form12.cs">
+    <Compile Include="014_GlobalClass_START.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form12.Designer.cs">
-      <DependentUpon>Form12.cs</DependentUpon>
+    <Compile Include="014_GlobalClass_START.Designer.cs">
+      <DependentUpon>014_GlobalClass_START.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form15-addClient.cs">
+    <Compile Include="019_Full_Order_Add_Client.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form15-addClient.Designer.cs">
-      <DependentUpon>Form15-addClient.cs</DependentUpon>
+    <Compile Include="019_Full_Order_Add_Client.Designer.cs">
+      <DependentUpon>019_Full_Order_Add_Client.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form15.cs">
+    <Compile Include="018_Full_Order.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form15.Designer.cs">
-      <DependentUpon>Form15.cs</DependentUpon>
+    <Compile Include="018_Full_Order.Designer.cs">
+      <DependentUpon>018_Full_Order.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form14.cs">
+    <Compile Include="017_ComboBox_PictureBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form14.Designer.cs">
-      <DependentUpon>Form14.cs</DependentUpon>
+    <Compile Include="017_ComboBox_PictureBox.Designer.cs">
+      <DependentUpon>017_ComboBox_PictureBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form16.cs">
+    <Compile Include="020_DateTime_for_MySQL.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form16.Designer.cs">
-      <DependentUpon>Form16.cs</DependentUpon>
+    <Compile Include="020_DateTime_for_MySQL.Designer.cs">
+      <DependentUpon>020_DateTime_for_MySQL.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form17-auth1.cs">
+    <Compile Include="021_Auth1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form17-auth1.Designer.cs">
-      <DependentUpon>Form17-auth1.cs</DependentUpon>
+    <Compile Include="021_Auth1.Designer.cs">
+      <DependentUpon>021_Auth1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form17-auth2.cs">
+    <Compile Include="022_Auth2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form17-auth2.Designer.cs">
-      <DependentUpon>Form17-auth2.cs</DependentUpon>
+    <Compile Include="022_Auth2.Designer.cs">
+      <DependentUpon>022_Auth2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form18.cs">
+    <Compile Include="023_DynamicControl_on_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form18.Designer.cs">
-      <DependentUpon>Form18.cs</DependentUpon>
+    <Compile Include="023_DynamicControl_on_Form.Designer.cs">
+      <DependentUpon>023_DynamicControl_on_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form4.cs">
+    <Compile Include="004_ExecuteNonQuery_UPDATE.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form4.Designer.cs">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <Compile Include="004_ExecuteNonQuery_UPDATE.Designer.cs">
+      <DependentUpon>004_ExecuteNonQuery_UPDATE.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form3.cs">
+    <Compile Include="003_ExecuteReaderListBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <Compile Include="003_ExecuteReaderListBox.Designer.cs">
+      <DependentUpon>003_ExecuteReaderListBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="002_ExecuteReader.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="002_ExecuteReader.Designer.cs">
+      <DependentUpon>002_ExecuteReader.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="001_ExecuteScalar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="001_ExecuteScalar.Designer.cs">
+      <DependentUpon>001_ExecuteScalar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form6.cs">
+    <Compile Include="006_ExecuteNonQuery_DELETE.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form6.Designer.cs">
-      <DependentUpon>Form6.cs</DependentUpon>
+    <Compile Include="006_ExecuteNonQuery_DELETE.Designer.cs">
+      <DependentUpon>006_ExecuteNonQuery_DELETE.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form5.cs">
+    <Compile Include="005_ExecuteNonQuery_INSERT.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form5.Designer.cs">
-      <DependentUpon>Form5.cs</DependentUpon>
+    <Compile Include="005_ExecuteNonQuery_INSERT.Designer.cs">
+      <DependentUpon>005_ExecuteNonQuery_INSERT.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form7.cs">
+    <Compile Include="007_ExecuteNonQuery_Method%28ListBox%29.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form7.Designer.cs">
-      <DependentUpon>Form7.cs</DependentUpon>
+    <Compile Include="007_ExecuteNonQuery_Method%28ListBox%29.Designer.cs">
+      <DependentUpon>007_ExecuteNonQuery_Method%28ListBox%29.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form10.cs">
+    <Compile Include="010_dataGridView_CLASS.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form10.Designer.cs">
-      <DependentUpon>Form10.cs</DependentUpon>
+    <Compile Include="010_dataGridView_CLASS.Designer.cs">
+      <DependentUpon>010_dataGridView_CLASS.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form11.cs">
+    <Compile Include="013_dataGridView_INNER_JOIN.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form11.Designer.cs">
-      <DependentUpon>Form11.cs</DependentUpon>
+    <Compile Include="013_dataGridView_INNER_JOIN.Designer.cs">
+      <DependentUpon>013_dataGridView_INNER_JOIN.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form13.cs">
+    <Compile Include="016_dataGridView_FILTER.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form13.Designer.cs">
-      <DependentUpon>Form13.cs</DependentUpon>
+    <Compile Include="016_dataGridView_FILTER.Designer.cs">
+      <DependentUpon>016_dataGridView_FILTER.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form8.cs">
+    <Compile Include="008_dataGridView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form8.Designer.cs">
-      <DependentUpon>Form8.cs</DependentUpon>
+    <Compile Include="008_dataGridView.Designer.cs">
+      <DependentUpon>008_dataGridView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form9.cs">
+    <Compile Include="009_ComboBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form9.Designer.cs">
-      <DependentUpon>Form9.cs</DependentUpon>
+    <Compile Include="009_ComboBox.Designer.cs">
+      <DependentUpon>009_ComboBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
@@ -199,74 +199,74 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form11-add.resx">
-      <DependentUpon>Form11-add.cs</DependentUpon>
+    <EmbeddedResource Include="011_ExecuteNonQuery_Combobox_INSERT.resx">
+      <DependentUpon>011_ExecuteNonQuery_Combobox_INSERT.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form11-edit.resx">
-      <DependentUpon>Form11-edit.cs</DependentUpon>
+    <EmbeddedResource Include="012_ExecuteNonQuery_Combobox_UPDATE.resx">
+      <DependentUpon>012_ExecuteNonQuery_Combobox_UPDATE.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form12-2.resx">
-      <DependentUpon>Form12-2.cs</DependentUpon>
+    <EmbeddedResource Include="015_GlobalClass_END.resx">
+      <DependentUpon>015_GlobalClass_END.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form12.resx">
-      <DependentUpon>Form12.cs</DependentUpon>
+    <EmbeddedResource Include="014_GlobalClass_START.resx">
+      <DependentUpon>014_GlobalClass_START.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form15-addClient.resx">
-      <DependentUpon>Form15-addClient.cs</DependentUpon>
+    <EmbeddedResource Include="019_Full_Order_Add_Client.resx">
+      <DependentUpon>019_Full_Order_Add_Client.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form15.resx">
-      <DependentUpon>Form15.cs</DependentUpon>
+    <EmbeddedResource Include="018_Full_Order.resx">
+      <DependentUpon>018_Full_Order.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form14.resx">
-      <DependentUpon>Form14.cs</DependentUpon>
+    <EmbeddedResource Include="017_ComboBox_PictureBox.resx">
+      <DependentUpon>017_ComboBox_PictureBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form16.resx">
-      <DependentUpon>Form16.cs</DependentUpon>
+    <EmbeddedResource Include="020_DateTime_for_MySQL.resx">
+      <DependentUpon>020_DateTime_for_MySQL.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form17-auth1.resx">
-      <DependentUpon>Form17-auth1.cs</DependentUpon>
+    <EmbeddedResource Include="021_Auth1.resx">
+      <DependentUpon>021_Auth1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form17-auth2.resx">
-      <DependentUpon>Form17-auth2.cs</DependentUpon>
+    <EmbeddedResource Include="022_Auth2.resx">
+      <DependentUpon>022_Auth2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form18.resx">
-      <DependentUpon>Form18.cs</DependentUpon>
+    <EmbeddedResource Include="023_DynamicControl_on_Form.resx">
+      <DependentUpon>023_DynamicControl_on_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form4.resx">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <EmbeddedResource Include="004_ExecuteNonQuery_UPDATE.resx">
+      <DependentUpon>004_ExecuteNonQuery_UPDATE.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <EmbeddedResource Include="003_ExecuteReaderListBox.resx">
+      <DependentUpon>003_ExecuteReaderListBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="002_ExecuteReader.resx">
+      <DependentUpon>002_ExecuteReader.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="001_ExecuteScalar.resx">
+      <DependentUpon>001_ExecuteScalar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form6.resx">
-      <DependentUpon>Form6.cs</DependentUpon>
+    <EmbeddedResource Include="006_ExecuteNonQuery_DELETE.resx">
+      <DependentUpon>006_ExecuteNonQuery_DELETE.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form5.resx">
-      <DependentUpon>Form5.cs</DependentUpon>
+    <EmbeddedResource Include="005_ExecuteNonQuery_INSERT.resx">
+      <DependentUpon>005_ExecuteNonQuery_INSERT.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form7.resx">
-      <DependentUpon>Form7.cs</DependentUpon>
+    <EmbeddedResource Include="007_ExecuteNonQuery_Method%28ListBox%29.resx">
+      <DependentUpon>007_ExecuteNonQuery_Method%28ListBox%29.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form10.resx">
-      <DependentUpon>Form10.cs</DependentUpon>
+    <EmbeddedResource Include="010_dataGridView_CLASS.resx">
+      <DependentUpon>010_dataGridView_CLASS.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form11.resx">
-      <DependentUpon>Form11.cs</DependentUpon>
+    <EmbeddedResource Include="013_dataGridView_INNER_JOIN.resx">
+      <DependentUpon>013_dataGridView_INNER_JOIN.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form13.resx">
-      <DependentUpon>Form13.cs</DependentUpon>
+    <EmbeddedResource Include="016_dataGridView_FILTER.resx">
+      <DependentUpon>016_dataGridView_FILTER.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form8.resx">
-      <DependentUpon>Form8.cs</DependentUpon>
+    <EmbeddedResource Include="008_dataGridView.resx">
+      <DependentUpon>008_dataGridView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form9.resx">
-      <DependentUpon>Form9.cs</DependentUpon>
+    <EmbeddedResource Include="009_ComboBox.resx">
+      <DependentUpon>009_ComboBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>

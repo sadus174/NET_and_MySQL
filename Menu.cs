@@ -19,13 +19,13 @@ namespace NET_and_MySQL
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 Form1 = new Form1();
+            ExecuteScalar Form1 = new ExecuteScalar();
             Form1.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form2 Form2 = new Form2();
+            ExecuteReader Form2 = new ExecuteReader();
             Form2.ShowDialog();
         }
 

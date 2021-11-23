@@ -11,9 +11,9 @@ using MySql.Data.MySqlClient;
 
 namespace NET_and_MySQL
 {
-    public partial class Form2 : Form
+    public partial class ExecuteReader : Form
     {
-        public Form2()
+        public ExecuteReader()
         {
             InitializeComponent();
         }
