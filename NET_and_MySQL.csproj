@@ -37,7 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data">
-      <HintPath>..\..\..\..\Downloads\mysql-connector-net-8.0.19-noinstall\v4.5.2\MySql.Data.dll</HintPath>
+      <HintPath>E:\DOCS\Downloads\mysql-connector-net-8.0.27-noinstall\v4.5.2\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -112,6 +112,12 @@
     </Compile>
     <Compile Include="Form17-auth2.Designer.cs">
       <DependentUpon>Form17-auth2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form18.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form18.Designer.cs">
+      <DependentUpon>Form18.cs</DependentUpon>
     </Compile>
     <Compile Include="Form4.cs">
       <SubType>Form</SubType>
@@ -222,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form17-auth2.resx">
       <DependentUpon>Form17-auth2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form18.resx">
+      <DependentUpon>Form18.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form4.resx">
       <DependentUpon>Form4.cs</DependentUpon>

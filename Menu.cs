@@ -119,5 +119,11 @@ namespace NET_and_MySQL
             Form17_auth1 form17_Auth1 = new Form17_auth1();
             form17_Auth1.ShowDialog();
         }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            Form18 form18 = new Form18();
+            form18.ShowDialog();    
+        }
     }
 }

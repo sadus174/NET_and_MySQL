@@ -24,8 +24,6 @@ namespace NET_and_MySQL
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DateTime dt = new DateTime();
-
             label2.Text = dateTimePicker1.Text;
             label5.Text = dateTimePicker1.Value.ToShortDateString();
         }
