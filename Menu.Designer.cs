@@ -160,7 +160,7 @@ namespace NET_and_MySQL
             this.toolStripStatusLabel2});
             this.statusStrip1.Location = new System.Drawing.Point(0, 547);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(267, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(277, 22);
             this.statusStrip1.TabIndex = 10;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -260,7 +260,7 @@ namespace NET_and_MySQL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(267, 569);
+            this.ClientSize = new System.Drawing.Size(277, 569);
             this.Controls.Add(this.button18);
             this.Controls.Add(this.button17);
             this.Controls.Add(this.button16);
